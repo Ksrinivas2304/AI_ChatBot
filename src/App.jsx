@@ -29,7 +29,7 @@ function App() {
   const generateResponse = async (msg) => {
     if (!msg) return;
 
-    const genAI = new GoogleGenerativeAI("AIzaSyAp5pXwsrG-p5xzvE1VgLsVSsNbfzJrHA0");
+    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(msg);
 
