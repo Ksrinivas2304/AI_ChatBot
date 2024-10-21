@@ -1,15 +1,97 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
 }
 
-html{
+html {
   overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make the container full height */
+}
+
+.middle {
+  flex: 1; /* Allow middle section to grow and take available space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 230px;
+  padding-top: 30px;
+  max-height: calc(100vh - 150px); /* Adjust for input box height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  position: relative; /* Ensure it’s positioned correctly */
+}
+
+.messages .userMsg,
+.messages .responseMsg {
+  margin-top: 10px;
+  clear: both;
+  background-color: #181818;
+  padding: 12px;
+  border-radius: 30px;
+  max-width: 60vw;
+  min-width: 20vw;
+}
+
+.messages .userMsg {
+  align-self: flex-end; /* Align user message to the right */
+}
+
+.messages .responseMsg {
+  align-self: flex-start; /* Align response message to the left */
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  background: #0E0E0E; /* Background color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333333; /* Darker color of the scrollbar thumb on hover */
+}
+
+/* Card styles */
+.card {
+  min-height: 15vh; /* Adjusted to make cards smaller */
+  padding: 10px; /* Reduced padding */
+  font-size: 18px; /* Adjusted font size for better visibility */
+  transition: all 0.3s; /* Smooth transition for hover effect */
+  background-color: #181818; /* Ensure consistency */
+}
+
+.card p {
+  margin: 0; /* Remove default margin for paragraphs */
+  line-height: 1.4; /* Improve line height for readability */
+}
+
+.bottom {
+  /* No additional changes needed; it should stay fixed at the bottom */
+  width: 100%;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.responseMsg li {
+  list-style-type: disc; /* Style for list items */
+  margin-left: 20px; /* Indentation for list items */
 }
